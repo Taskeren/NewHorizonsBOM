@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.GTNewHorizons</groupId>
+    <artifactId>gtnh-bom</artifactId>
+    <version>previous_nightly</version>
+    <packaging>pom</packaging>
+    <name>gtnh-bom</name>
+    <description>Ktor is a framework for quickly creating web applications in Kotlin with minimal effort.</description>
+    <url>https://github.com/ktorio/ktor</url>
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.github.GTNewHorizons</groupId>
+                <artifactId>AE2FluidCraft-Rework</artifactId>
+                <version>1.4.62-gtnh-pre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.GTNewHorizons</groupId>
+                <artifactId>Avaritia</artifactId>
+                <version>1.64-pre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.GTNewHorizons</groupId>
+                <artifactId>Avaritiaddons</artifactId>
+                <version>1.8.4-GTNH</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.GTNewHorizons</groupId>
+                <artifactId>Eternal-Singularity</artifactId>
+                <version>1.2.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.NewHorizons</groupId>
+                <artifactId>Forgelin</artifactId>
+                <version>2.0.1-GTNH</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.NewHorizons</groupId>
+                <artifactId>GT5-Unofficial</artifactId>
+                <version>5.09.51.280-pre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.GTNewHorizons</groupId>
+                <artifactId>GTNHLib</artifactId>
+                <version>0.6.21</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.GTNewHorizons</groupId>
+                <artifactId>MagicBees</artifactId>
+                <version>2.9.2-GTNH</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.GTNewHorizons</groupId>
+                <artifactId>NewHorizonsCoreMod</artifactId>
+                <version>2.7.179-pre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.GTNewHorizons</groupId>
+                <artifactId>Universal-Singularities</artifactId>
+                <version>8.10.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

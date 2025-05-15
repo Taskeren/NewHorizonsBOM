@@ -1,0 +1,46 @@
+export interface ModInfo {
+    version: string
+    side: string
+}
+
+export interface Manifest {
+    version: string
+    last_version: string
+    last_updated: string
+    config: string
+    github_mods: Record<string, ModInfo>
+    external_mods: Record<string, ModInfo>
+}
+
+export function parseManifestFileContent(content: string): Manifest {
+    return JSON.parse(content);
+}
+
+export interface ArtifactInfo {
+    groupId: string
+    artifactId: string
+    version: string
+}
+
+export function makeBom(dependencies: ArtifactInfo[], version: string = "99.99.99"): string {
+    return `<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.GTNewHorizons</groupId>
+    <artifactId>gtnh-bom</artifactId>
+    <version>${version}</version>
+    <packaging>pom</packaging>
+    <name>gtnh-bom</name>
+    <description>Ktor is a framework for quickly creating web applications in Kotlin with minimal effort.</description>
+    <url>https://github.com/ktorio/ktor</url>
+    <dependencyManagement>
+        <dependencies>
+${dependencies.map(dep => `
+            <dependency>
+                <groupId>${dep.groupId}</groupId>
+                <artifactId>${dep.artifactId}</artifactId>
+                <version>${dep.version}</version>
+            </dependency>`).join("\n")}
+        </dependencies>
+    </dependencyManagement>
+</project>`
+}
