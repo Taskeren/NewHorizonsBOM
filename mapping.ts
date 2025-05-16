@@ -43,3 +43,17 @@ export function gatherDependencies(manifest: Manifest): ArtifactInfo[] {
 
     return dependencies;
 }
+
+export function makeIndex() {
+    return `
+<html lang="en">
+<head>
+    <title>NewHorizonsBOM</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <h2>Supported Mappings</h2>
+    ${Object.entries(ManifestMapping).map(([modName, gradleDeclare]) => `<p>${modName}: <pre>${gradleDeclare}</pre></p>`).join("\n")}
+</body>
+</html>`
+}

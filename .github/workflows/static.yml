@@ -29,8 +29,6 @@ jobs:
         run: bun run index.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create Workflow Marker
-        run: echo "GITHUB WORKFLOW" > releases/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

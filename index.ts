@@ -1,7 +1,7 @@
 import {Octokit} from "@octokit/rest";
 import {getManifestFileContent, listFilesInManifestFolder} from "./util";
 import {makeBom, parseManifestFileContent} from "./type";
-import {gatherDependencies} from "./mapping";
+import {gatherDependencies, makeIndex} from "./mapping";
 import {writeFile} from "fs/promises";
 import {mkdir} from "fs/promises";
 import {dirname} from "path"
@@ -35,6 +35,9 @@ async function main() {
         await writeFileSmart(outputPath, bomText);
         console.log(`Dumped to ${outputPath}`)
     }
+
+    // output index
+    await writeFileSmart("releases/index.html", makeIndex());
 }
 
 async function writeFileSmart(file: string, content: string) {
